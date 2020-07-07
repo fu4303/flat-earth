@@ -30,9 +30,14 @@ function startMoveTrack(e) {
 
 function endMoveTrack() {
   if (isMouseDown) {
-    // Save how much rotation happened, so next time
-    // it continues from there
-    previousX = lastMouseOrTouchPositon - initialMouseDownXPosition + previousX
+    // This ensures that a click with no movement doesn't
+    // set previousX to NaN
+    if (lastMouseOrTouchPositon) {
+      // Save how much rotation happened, so next time
+      // it continues from there
+      previousX =
+        lastMouseOrTouchPositon - initialMouseDownXPosition + previousX
+    }
 
     // Reset mouse tracking
     isMouseDown = false
