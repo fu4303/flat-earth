@@ -22,14 +22,14 @@ spinButton.addEventListener('click', function () {
 
     setTimeout(() => {
       box.style.transition = ''
-      previousX = 450
+      previousX = 300
       playVideo()
     }, 800)
   }
 })
 
-function spin(x, isDesktop) {
-  box.style.transform = `rotateY(${x * (isDesktop ? 0.4 : 0.8)}deg)`
+function spin(x) {
+  box.style.transform = `rotateY(${x * 0.6}deg)`
 }
 function playVideo() {
   const isVisible = isVideoVisible(box)
@@ -70,12 +70,14 @@ function endMoveTrack() {
 function trackMovement(e) {
   if (isMouseDown) {
     const mousePositionX = e.clientX || e.touches[0].clientX
-    const isDesktop = e.clientX
 
-    const movedX = mousePositionX - initialMouseDownXPosition + previousX
+    const movedX = parseInt(
+      mousePositionX - initialMouseDownXPosition + previousX,
+      10
+    )
     lastMouseOrTouchPositon = mousePositionX
 
-    spin(movedX, isDesktop)
+    spin(movedX)
     playVideo()
   }
 }
