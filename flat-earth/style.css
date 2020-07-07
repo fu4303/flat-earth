@@ -1,6 +1,14 @@
-body {
-  background: darkgray;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background: black
+    url('https://res.cloudinary.com/marcelcruz/image/upload/v1594120184/playground/stars_od97j5.png')
+    repeat;
+  margin: 0;
   perspective: 1500px;
   height: 100vh;
 }
@@ -22,43 +30,51 @@ section {
 }
 
 .face-front {
-  background: blue;
-  height: 400px;
-  width: 260px;
-  transform: translateX(-50%) translateY(-50%) translateZ(20px);
-}
-
-.face-right {
-  background: green;
-  height: 400px;
-  width: 40px;
-  transform: translateX(-50%) translateY(-50%) rotateY(90deg) translateZ(130px);
-}
-
-.face-left {
-  background: pink;
-  height: 400px;
-  width: 40px;
-  transform: translateX(-50%) translateY(-50%) rotateY(-90deg) translateZ(130px);
-}
-
-.face-top {
-  background: red;
-  height: 40px;
-  width: 260px;
-  transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateZ(200px);
-}
-
-.face-bottom {
-  background: orange;
-  height: 40px;
-  width: 260px;
-  transform: translateX(-50%) translateY(-50%) rotateX(-90deg) translateZ(200px);
+  backface-visibility: hidden;
+  background: url('https://res.cloudinary.com/marcelcruz/image/upload/f_auto,q_auto,w_1200/v1594120007/playground/flat-earth_txplr7.jpg');
+  background-size: cover;
+  height: 200px;
+  width: 360px;
+  transform: translateX(-50%) translateY(-50%) translateZ(5px);
 }
 
 .face-back {
   background: black;
-  height: 400px;
-  width: 260px;
-  transform: translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(20px);
+  height: 200px;
+  width: 360px;
+  transform: translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(5px);
+}
+
+.face-back video {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.face-right {
+  background: #3a210e;
+  height: 200px;
+  width: 10px;
+  transform: translateX(-50%) translateY(-50%) rotateY(90deg) translateZ(180px);
+}
+
+.face-left {
+  background: #3a210e;
+  height: 200px;
+  width: 10px;
+  transform: translateX(-50%) translateY(-50%) rotateY(-90deg) translateZ(180px);
+}
+
+.face-top {
+  background: #3a210e;
+  height: 10px;
+  width: 360px;
+  transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateZ(100px);
+}
+
+.face-bottom {
+  background: #3a210e;
+  height: 10px;
+  width: 360px;
+  transform: translateX(-50%) translateY(-50%) rotateX(-90deg) translateZ(100px);
 }
