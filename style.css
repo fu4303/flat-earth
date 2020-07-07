@@ -98,13 +98,16 @@ h1 {
   width: 80%;
 }
 
-button.spin {
+button.spin-text {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  color: white;
   text-decoration: underline;
+}
+
+.spin-text {
+  font-size: 20px;
+  color: white;
 }
 
 span.created-by {
@@ -260,6 +263,10 @@ video {
     position: absolute;
     bottom: 80px;
     width: 80%;
+  }
+
+  .spin-text {
+    font-size: 16px;
   }
 }
 
