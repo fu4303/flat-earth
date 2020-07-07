@@ -61,15 +61,16 @@ a:visited {
 }
 
 .face {
-  position: absolute;
-  top: 0;
-  left: 0;
   background-size: cover;
   cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
 .face.front {
   backface-visibility: hidden;
+  background-color: black;
   background: url('https://res.cloudinary.com/marcelcruz/image/upload/f_auto,q_auto,w_1200/v1594120007/playground/flat-earth_txplr7.jpg');
   background-size: cover;
   height: var(--face-height);

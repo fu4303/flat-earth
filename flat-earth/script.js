@@ -6,10 +6,9 @@ let initialMouseDownXPosition = 0
 let previousX = 0
 let lastMouseOrTouchPositon
 
-function spin(x) {
-  box.style.transform = `rotateY(${x * 0.4}deg)`
+function spin(x, isDesktop) {
+  box.style.transform = `rotateY(${x * (isDesktop ? 0.4 : 0.8)}deg)`
 }
-
 function playVideo() {
   const rotationAngle = getRotationAngle(box)
 
@@ -38,15 +37,15 @@ function endMoveTrack() {
 function trackMovement(e) {
   if (isMouseDown) {
     const mousePositionX = e.clientX || e.touches[0].clientX
+    const isDesktop = e.clientX
 
     const movedX = mousePositionX - initialMouseDownXPosition + previousX
     lastMouseOrTouchPositon = mousePositionX
 
-    spin(movedX)
+    spin(movedX, isDesktop)
     playVideo()
   }
 }
-
 document.addEventListener('mousedown', e => startMoveTrack(e))
 document.addEventListener('touchstart', e => startMoveTrack(e))
 
