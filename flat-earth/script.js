@@ -6,7 +6,7 @@ let initialMouseDownXPosition = 0
 let previousX = 0
 
 function spin(x) {
-  box.style.transform = `rotateY(${x * 0.5}deg)`
+  box.style.transform = `rotateY(${x * 0.3}deg)`
 }
 
 function playVideo() {
