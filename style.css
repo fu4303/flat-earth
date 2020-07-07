@@ -30,14 +30,20 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  font-family: 'KBPlanetEarth', sans-serif;
   height: var(--vh);
   justify-content: center;
-  letter-spacing: 2px;
   margin: 0;
   padding: 50px;
   perspective: 1500px;
   text-align: center;
+}
+
+h1,
+p,
+span,
+button {
+  font-family: 'KBPlanetEarth', sans-serif;
+  letter-spacing: 2px;
 }
 
 .modal {
@@ -84,8 +90,12 @@ h1 {
   font-size: 42px;
 }
 
-span.spin {
+button.spin {
+  background: none;
+  border: none;
   cursor: pointer;
+  font-size: 16px;
+  color: white;
   text-decoration: underline;
 }
 

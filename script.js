@@ -2,7 +2,7 @@ const box = document.querySelector('section')
 const video = document.querySelector('video')
 const modal = document.querySelector('.modal')
 const okButton = document.querySelector('button.ok')
-const spinButton = document.querySelector('span.spin')
+const spinButton = document.querySelector('button.spin')
 
 let isMouseDown = false
 let initialMouseDownXPosition = 0
@@ -36,10 +36,17 @@ function playVideo() {
 
   if (isVisible) {
     video.play()
+
     spinButton.style.cursor = 'initial'
+    spinButton.style.pointerEvents = 'none'
+    spinButton.style.textDecoration = 'none'
+    spinButton.blur()
   } else {
     video.pause()
+
     spinButton.style.cursor = 'pointer'
+    spinButton.style.pointerEvents = 'initial'
+    spinButton.style.textDecoration = 'underline'
   }
 }
 
