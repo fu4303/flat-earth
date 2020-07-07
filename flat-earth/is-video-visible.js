@@ -1,4 +1,4 @@
-function getRotationAngle(target) {
+function isVideoVisible(target) {
   const obj = window.getComputedStyle(target, null)
   const matrix =
     obj.getPropertyValue('-webkit-transform') ||
@@ -16,5 +16,8 @@ function getRotationAngle(target) {
     angle = Math.round(Math.atan2(b, a) * (180 / Math.PI))
   }
 
-  return angle < 0 ? (angle += 360) : angle
+  // return angle < 0 ? (angle += 360) : angle
+  const finalAngle = angle < 0 ? (angle += 360) : angle
+
+  return finalAngle >= 180 ? true : false
 }

@@ -2,6 +2,7 @@ const box = document.querySelector('section')
 const video = document.querySelector('video')
 const modal = document.querySelector('.modal')
 const okButton = document.querySelector('button.ok')
+const spinButton = document.querySelector('span.spin')
 
 let isMouseDown = false
 let initialMouseDownXPosition = 0
@@ -12,13 +13,28 @@ okButton.addEventListener('click', function () {
   modal.remove()
 })
 
+spinButton.addEventListener('click', function () {
+  const isVisible = isVideoVisible(box)
+
+  if (!isVisible) {
+    box.style.transition = 'transform 1s'
+    box.style.transform = 'rotateY(180deg)'
+
+    setTimeout(() => {
+      box.style.transition = ''
+      previousX = 450
+      playVideo()
+    }, 800)
+  }
+})
+
 function spin(x, isDesktop) {
   box.style.transform = `rotateY(${x * (isDesktop ? 0.4 : 0.8)}deg)`
 }
 function playVideo() {
-  const rotationAngle = getRotationAngle(box)
+  const isVisible = isVideoVisible(box)
 
-  rotationAngle >= 180 ? video.play() : video.pause()
+  isVisible ? video.play() : video.pause()
 }
 
 function startMoveTrack(e) {

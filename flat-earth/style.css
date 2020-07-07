@@ -72,7 +72,12 @@ section {
   transform-style: preserve-3d;
 }
 
-span {
+span.spin {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+span.created-by {
   bottom: 20px;
   font-family: monospace;
   position: absolute;
