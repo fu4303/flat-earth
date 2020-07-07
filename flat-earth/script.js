@@ -1,10 +1,16 @@
 const box = document.querySelector('section')
 const video = document.querySelector('video')
+const modal = document.querySelector('.modal')
+const okButton = document.querySelector('button.ok')
 
 let isMouseDown = false
 let initialMouseDownXPosition = 0
 let previousX = 0
 let lastMouseOrTouchPositon
+
+okButton.addEventListener('click', function () {
+  modal.remove()
+})
 
 function spin(x, isDesktop) {
   box.style.transform = `rotateY(${x * (isDesktop ? 0.4 : 0.8)}deg)`

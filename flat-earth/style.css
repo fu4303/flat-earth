@@ -33,6 +33,30 @@ body {
   text-align: center;
 }
 
+.modal {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  transform: translateZ(0px);
+  width: 100vw;
+  z-index: 9;
+}
+
+button.ok {
+  border: none;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 30px;
+  margin-top: 30px;
+  padding: 10px 50px;
+}
+
 main {
   height: var(--face-height);
   width: var(--face-width);
