@@ -2,7 +2,7 @@ const box = document.querySelector('section')
 const video = document.querySelector('video')
 const modal = document.querySelector('.modal')
 const okButton = document.querySelector('button.ok')
-const spinButton = document.querySelector('button.spin')
+const spinButton = document.querySelector('button.spin-text')
 
 let isMouseDown = false
 let initialMouseDownXPosition = 0
