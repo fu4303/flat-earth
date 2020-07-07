@@ -22,20 +22,26 @@
 }
 
 body {
-  align-items: center;
   animation: scrollBackground 500s linear infinite;
   background: black
     url('https://res.cloudinary.com/marcelcruz/image/upload/v1594120184/playground/stars_od97j5.png')
     repeat;
   color: white;
-  display: flex;
-  flex-direction: column;
   height: var(--vh);
-  justify-content: center;
-  margin: 0;
-  padding: 50px;
   perspective: 1500px;
   text-align: center;
+  width: 100vw;
+}
+
+.wrapper {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 h1,
@@ -89,6 +95,7 @@ section {
 
 h1 {
   font-size: 42px;
+  width: 80%;
 }
 
 button.spin {
@@ -155,6 +162,69 @@ a:visited {
     translateZ(var(--side-translateZ));
 }
 
+@keyframes shakeUfo {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes moveUfo {
+  0% {
+    top: -100px;
+    left: -100px;
+  }
+
+  20% {
+    top: 20px;
+    left: 200px;
+  }
+
+  30% {
+    top: 300px;
+    left: 300px;
+  }
+
+  50% {
+    top: 500px;
+    left: 900px;
+  }
+
+  60% {
+    top: 2000px;
+    left: 3000px;
+  }
+
+  70% {
+    top: 1000px;
+    left: 100px;
+  }
+
+  80% {
+    top: 100px;
+    left: 900px;
+  }
+
+  100% {
+    top: -100px;
+    left: -100px;
+  }
+}
+
+.ufo {
+  animation: shakeUfo 2s ease-in-out infinite, moveUfo 30s ease-in-out infinite;
+  width: 30px;
+  position: absolute;
+  z-index: -1;
+}
+
 video {
   height: 100%;
   object-fit: cover;
@@ -175,10 +245,6 @@ video {
     --face-height: 200px;
     --face-width: calc(200px * 1.5);
     --side-translateZ: 150px;
-  }
-
-  body {
-    padding: 30px;
   }
 
   h1 {
