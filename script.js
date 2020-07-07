@@ -6,7 +6,7 @@ const spinButton = document.querySelector('span.spin')
 
 let isMouseDown = false
 let initialMouseDownXPosition = 0
-let previousX = 0
+let previousX = 50
 let lastMouseOrTouchPositon
 
 okButton.addEventListener('click', function () {
