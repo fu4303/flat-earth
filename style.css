@@ -1,3 +1,9 @@
+@keyframes scrollBackground {
+  100% {
+    background-position: -3000px 0px;
+  }
+}
+
 @font-face {
   font-family: KBPlanetEarth;
   src: url(./assets/KBPlanetEarth.ttf);
@@ -17,6 +23,7 @@
 
 body {
   align-items: center;
+  animation: scrollBackground 500s linear infinite;
   background: black
     url('https://res.cloudinary.com/marcelcruz/image/upload/v1594120184/playground/stars_od97j5.png')
     repeat;
