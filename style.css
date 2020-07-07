@@ -79,6 +79,10 @@ section {
   transform-style: preserve-3d;
 }
 
+h1 {
+  font-size: 42px;
+}
+
 span.spin {
   cursor: pointer;
   text-decoration: underline;
@@ -112,22 +116,21 @@ a:visited {
   background-size: cover;
   height: var(--face-height);
   width: var(--face-width);
-  transform: translateX(-50%) translateY(-50%) translateZ(5px);
+  transform: translateX(-50%) translateY(-50%) translateZ(7.5px);
 }
 
 .face.back {
   background: black;
   height: var(--face-height);
   width: var(--face-width);
-  /* height: 200px;
-  width: 360px; */
-  transform: translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(5px);
+  transform: translateX(-50%) translateY(-50%) rotateY(-180deg)
+    translateZ(7.5px);
 }
 
 .face.right {
   background: #3a210e;
   height: var(--face-height);
-  width: 10px;
+  width: 15px;
   transform: translateX(-50%) translateY(-50%) rotateY(90deg)
     translateZ(var(--side-translateZ));
 }
@@ -135,7 +138,7 @@ a:visited {
 .face.left {
   background: #3a210e;
   height: var(--face-height);
-  width: 10px;
+  width: 15px;
   transform: translateX(-50%) translateY(-50%) rotateY(-90deg)
     translateZ(var(--side-translateZ));
 }
