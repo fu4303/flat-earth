@@ -48,7 +48,7 @@ button {
 
 .modal {
   align-items: center;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   flex-direction: column;
   font-size: 24px;
@@ -69,6 +69,7 @@ button.ok {
   font-size: 30px;
   margin-top: 30px;
   padding: 10px 50px;
+  width: 320px;
 }
 
 main {
@@ -182,6 +183,17 @@ video {
 
   h1 {
     font-size: 24px;
+  }
+
+  .modal span {
+    position: absolute;
+    top: 250px;
+  }
+
+  button.ok {
+    position: absolute;
+    bottom: 80px;
+    width: 80%;
   }
 }
 

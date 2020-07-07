@@ -39,14 +39,12 @@ function playVideo() {
 
     spinButton.style.cursor = 'initial'
     spinButton.style.pointerEvents = 'none'
-    spinButton.style.textDecoration = 'none'
     spinButton.blur()
   } else {
     video.pause()
 
     spinButton.style.cursor = 'pointer'
     spinButton.style.pointerEvents = 'initial'
-    spinButton.style.textDecoration = 'underline'
   }
 }
 
