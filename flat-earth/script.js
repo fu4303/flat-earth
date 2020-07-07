@@ -34,7 +34,13 @@ function spin(x, isDesktop) {
 function playVideo() {
   const isVisible = isVideoVisible(box)
 
-  isVisible ? video.play() : video.pause()
+  if (isVisible) {
+    video.play()
+    spinButton.style.cursor = 'initial'
+  } else {
+    video.pause()
+    spinButton.style.cursor = 'pointer'
+  }
 }
 
 function startMoveTrack(e) {
