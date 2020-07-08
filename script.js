@@ -1,4 +1,4 @@
-const box = document.querySelector('section')
+const panel = document.querySelector('section')
 const video = document.querySelector('video')
 const modal = document.querySelector('.modal')
 const okButton = document.querySelector('button.ok')
@@ -9,30 +9,27 @@ let initialMouseDownXPosition = 0
 let previousX = 50
 let lastMouseOrTouchPositon
 
-okButton.addEventListener('click', function () {
-  modal.remove()
-})
-
-spinButton.addEventListener('click', function () {
-  const isVisible = isVideoVisible(box)
+function spin() {
+  const isVisible = isVideoVisible(panel)
 
   if (!isVisible) {
-    box.style.transition = 'transform 1s'
-    box.style.transform = 'rotateY(180deg)'
+    panel.style.transition = 'transform 1s'
+    panel.style.transform = 'rotateY(180deg)'
 
     setTimeout(() => {
-      box.style.transition = ''
+      panel.style.transition = ''
       previousX = 300
       playVideo()
     }, 800)
   }
-})
-
-function spin(x) {
-  box.style.transform = `rotateY(${x * 0.6}deg)`
 }
+
+function rotatePanel(x) {
+  panel.style.transform = `rotateY(${x * 0.6}deg)`
+}
+
 function playVideo() {
-  const isVisible = isVideoVisible(box)
+  const isVisible = isVideoVisible(panel)
 
   if (isVisible) {
     video.play()
@@ -69,6 +66,9 @@ function endMoveTrack() {
     // Reset mouse tracking
     isMouseDown = false
     initialMouseDownXPosition = 0
+
+    // Webkit also plays video on certain events, like touchend
+    playVideo()
   }
 }
 
@@ -82,15 +82,27 @@ function trackMovement(e) {
     )
     lastMouseOrTouchPositon = mousePositionX
 
-    spin(movedX)
+    rotatePanel(movedX)
+
+    // Tries to play while still spinning, though some
+    // browsers won't, so endMoveTrack also calls
+    // this function
     playVideo()
   }
 }
-document.addEventListener('mousedown', e => startMoveTrack(e))
-document.addEventListener('touchstart', e => startMoveTrack(e))
 
-document.addEventListener('mouseup', () => endMoveTrack())
-document.addEventListener('touchend', () => endMoveTrack())
+okButton.addEventListener('click', function () {
+  modal.remove()
+})
 
-document.addEventListener('mousemove', e => trackMovement(e))
-document.addEventListener('touchmove', e => trackMovement(e))
+spinButton.addEventListener('click', spin)
+spinButton.addEventListener('touchend', spin)
+
+document.addEventListener('mousedown', startMoveTrack)
+document.addEventListener('touchstart', startMoveTrack)
+
+document.addEventListener('mouseup', endMoveTrack)
+document.addEventListener('touchend', endMoveTrack)
+
+document.addEventListener('mousemove', trackMovement)
+document.addEventListener('touchmove', trackMovement)
