@@ -133,6 +133,21 @@ a:visited {
   font-weight: 800;
 }
 
+.play-button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  padding: 10px;
+  transform: translateZ(10000px);
+}
+
+.play-button img {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+}
+
 .face {
   background-size: cover;
   cursor: pointer;
@@ -161,7 +176,10 @@ a:visited {
 }
 
 .face.back {
+  align-items: center;
   background: black;
+  display: flex;
+  justify-content: center;
   height: var(--face-height);
   width: var(--face-width);
   transform: translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(7px);
@@ -243,7 +261,8 @@ a:visited {
   animation: shakeUfo 2s ease-in-out infinite, moveUfo 30s ease-in-out infinite;
   width: 30px;
   position: absolute;
-  z-index: -1;
+  z-index: -100;
+  transform: translateZ(-100000px);
 }
 
 video {

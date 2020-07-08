@@ -1,8 +1,9 @@
 const panel = document.querySelector('section')
 const video = document.querySelector('video')
+const playButton = document.querySelector('.play-button')
+const spinButton = document.querySelector('button.spin-text')
 const modal = document.querySelector('.modal')
 const okButton = document.querySelector('button.ok')
-const spinButton = document.querySelector('button.spin-text')
 
 let isMouseDown = false
 let initialMouseDownXPosition = 0
@@ -28,11 +29,16 @@ function rotatePanel(x) {
   panel.style.transform = `rotateY(${x * 0.6}deg)`
 }
 
-function playVideo() {
+async function playVideo() {
   const isVisible = isVideoVisible(panel)
 
   if (isVisible) {
-    video.play()
+    try {
+      await video.play()
+      playButton.style.display = 'none'
+    } catch (error) {
+      playButton.style.display = 'block'
+    }
 
     spinButton.style.cursor = 'initial'
     spinButton.style.pointerEvents = 'none'
@@ -97,6 +103,8 @@ okButton.addEventListener('click', function () {
 
 spinButton.addEventListener('click', spin)
 spinButton.addEventListener('touchend', spin)
+
+playButton.addEventListener('click', playVideo)
 
 document.addEventListener('mousedown', startMoveTrack)
 document.addEventListener('touchstart', startMoveTrack)
