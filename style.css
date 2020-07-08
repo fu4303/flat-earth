@@ -253,11 +253,15 @@ video {
   width: 100%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   :root {
     --face-height: 300px;
     --face-width: calc(300px * 1.5);
     --side-translateZ: 225px;
+  }
+
+  h1 {
+    font-size: 28px;
   }
 }
 
@@ -266,6 +270,10 @@ video {
     --face-height: 200px;
     --face-width: calc(200px * 1.5);
     --side-translateZ: 150px;
+  }
+
+  main {
+    margin: 40px 0;
   }
 
   h1 {
