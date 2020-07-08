@@ -29,7 +29,6 @@ body {
     repeat;
   color: white;
   height: var(--vh);
-  perspective: 1500px;
   text-align: center;
   width: 100vw;
 }
@@ -84,6 +83,8 @@ main {
   width: var(--face-width);
   margin: 80px 0;
   position: relative;
+  perspective: 1500px;
+  transform-style: preserve-3d;
 }
 
 section {
