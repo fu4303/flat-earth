@@ -70,9 +70,9 @@ button {
   justify-content: center;
   padding: 30px;
   position: absolute;
-  transform: translateZ(0px);
+  transform: translateZ(1000px);
   width: 100vw;
-  z-index: 9;
+  z-index: 1000;
 }
 
 button.ok {
