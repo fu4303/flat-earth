@@ -75,6 +75,11 @@ button {
   z-index: 1000;
 }
 
+.audio-warning {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
 button.ok {
   border: none;
   border-radius: 20px;
