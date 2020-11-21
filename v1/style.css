@@ -25,7 +25,7 @@
 body {
   animation: scrollBackground 500s linear infinite;
   background: black
-    url('https://res.cloudinary.com/marcelcruz/image/upload/v1594120184/playground/stars_od97j5.png')
+    url("https://res.cloudinary.com/marcelcruz/image/upload/v1594120184/playground/stars_od97j5.png")
     repeat;
   color: white;
   height: var(--vh);
@@ -56,7 +56,7 @@ h1,
 p,
 span,
 button {
-  font-family: 'KBPlanetEarth', sans-serif;
+  font-family: "KBPlanetEarth", sans-serif;
   letter-spacing: 2px;
 }
 
@@ -163,7 +163,7 @@ a:visited {
 .face.front {
   backface-visibility: hidden;
   background-color: black;
-  background: url('https://res.cloudinary.com/marcelcruz/image/upload/f_auto,q_auto,w_1200/v1594120007/playground/flat-earth_txplr7.jpg');
+  background: url("https://res.cloudinary.com/marcelcruz/image/upload/f_auto,q_auto,w_1200/v1594120007/playground/flat-earth_txplr7.jpg");
   background-size: cover;
   height: var(--face-height);
   width: var(--face-width);

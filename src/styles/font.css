@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "KBPlanetEarth";
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local("KBPlanetEarth"),
+    url("../assets/KBPlanetEarth.ttf") format("truetype");
+}

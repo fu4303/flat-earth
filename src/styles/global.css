@@ -1,0 +1,341 @@
+@keyframes scrollBackground {
+  100% {
+    background-position: -3000px 0px;
+  }
+}
+
+/* @font-face {
+  font-family: KBPlanetEarth;
+  src: url(../assets/KBPlanetEarth.ttf);
+} */
+
+:root {
+  --face-height: 400px;
+  --face-width: calc(400px * 1.5);
+  --side-translateZ: 300px;
+  --brown: #3a210e;
+  --vh: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  animation: scrollBackground 500s linear infinite;
+  background: black
+    url("https://res.cloudinary.com/marcelcruz/image/upload/v1594120184/playground/stars_od97j5.png")
+    repeat;
+  color: white;
+  height: var(--vh);
+  text-align: center;
+  width: 100vw;
+}
+
+.wrapper {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.ufo-container {
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+h1,
+p,
+span,
+button {
+  font-family: "KBPlanetEarth", sans-serif;
+  letter-spacing: 2px;
+}
+
+.modal {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  height: var(--vh);
+  justify-content: center;
+  padding: 30px;
+  position: absolute;
+  transform: translateZ(1000px);
+  width: 100vw;
+  z-index: 1000;
+}
+
+.audio-warning {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+button.ok {
+  border: none;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 30px;
+  margin-top: 30px;
+  padding: 10px 50px;
+  width: 320px;
+}
+
+main {
+  height: var(--face-height);
+  width: var(--face-width);
+  margin: 80px 0;
+  position: relative;
+  perspective: 1500px;
+}
+
+section {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: rotateY(30deg);
+  transform-style: preserve-3d;
+}
+
+h1.title {
+  font-size: 42px;
+  font-family: "KBPlanetEarth", sans-serif !important;
+  letter-spacing: 2px;
+  width: 80%;
+}
+
+button.spin-text {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.spin-text {
+  font-size: 20px;
+  color: white;
+}
+
+span.created-by {
+  bottom: 20px;
+  font-family: monospace;
+  position: absolute;
+  right: 30px;
+}
+
+a,
+a:visited {
+  color: white;
+  font-weight: 800;
+}
+
+.play-button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  padding: 10px;
+  transform: translateZ(10000px);
+}
+
+.play-button img {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+}
+
+.face {
+  background-size: cover;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.face.front {
+  backface-visibility: hidden;
+  background-color: black;
+  background: url("https://res.cloudinary.com/marcelcruz/image/upload/f_auto,q_auto,w_1200/v1594120007/playground/flat-earth_txplr7.jpg");
+  background-size: cover;
+  height: var(--face-height);
+  width: var(--face-width);
+  transform: translateX(-50%) translateY(-50%) translateZ(7px);
+}
+
+.face.front-background {
+  backface-visibility: hidden;
+  background-color: black;
+  background-size: cover;
+  height: calc(var(--face-height));
+  width: calc(var(--face-width));
+  transform: translateX(-50%) translateY(-50%) translateZ(6.5px);
+}
+
+.face.back {
+  align-items: center;
+  background: black;
+  display: flex;
+  justify-content: center;
+  height: var(--face-height);
+  width: var(--face-width);
+  transform: translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(7px);
+}
+
+.face.right {
+  background: var(--brown);
+  height: var(--face-height);
+  width: 15px;
+  transform: translateX(-50%) translateY(-50%) rotateY(90deg)
+    translateZ(var(--side-translateZ));
+}
+
+.face.left {
+  background: var(--brown);
+  height: var(--face-height);
+  width: 15px;
+  transform: translateX(-50%) translateY(-50%) rotateY(-90deg)
+    translateZ(var(--side-translateZ));
+}
+
+@keyframes shakeUfo {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes moveUfo {
+  0% {
+    top: -100px;
+    left: -100px;
+  }
+
+  20% {
+    top: 20px;
+    left: 200px;
+  }
+
+  30% {
+    top: 300px;
+    left: 300px;
+  }
+
+  50% {
+    top: 500px;
+    left: 900px;
+  }
+
+  60% {
+    top: 2000px;
+    left: 3000px;
+  }
+
+  70% {
+    top: 1000px;
+    left: 100px;
+  }
+
+  80% {
+    top: 100px;
+    left: 900px;
+  }
+
+  100% {
+    top: -100px;
+    left: -100px;
+  }
+}
+
+.ufo {
+  animation: shakeUfo 2s ease-in-out infinite, moveUfo 30s ease-in-out infinite;
+  width: 30px;
+  position: absolute;
+  z-index: -100;
+  transform: translateZ(-100000px);
+}
+
+video {
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    --face-height: 300px;
+    --face-width: calc(300px * 1.5);
+    --side-translateZ: 225px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --face-height: 200px;
+    --face-width: calc(200px * 1.5);
+    --side-translateZ: 150px;
+  }
+
+  main {
+    margin: 40px 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .modal span {
+    position: absolute;
+    top: 250px;
+  }
+
+  button.ok {
+    position: absolute;
+    bottom: 80px;
+    width: 80%;
+  }
+
+  .spin-text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  :root {
+    --face-height: 150px;
+    --face-width: calc(150px * 1.5);
+    --side-translateZ: 112.5px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  :root {
+    --face-height: 100px;
+    --face-width: calc(100px * 1.5);
+    --side-translateZ: 75px;
+  }
+}
